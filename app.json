@@ -27,7 +27,6 @@
     },
     "scheme": "instagram-clone",
     "plugins": [
-      "expo-router",
       [
         "expo-splash-screen",
         {
