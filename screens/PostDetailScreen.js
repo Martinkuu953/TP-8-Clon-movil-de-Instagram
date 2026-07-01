@@ -56,7 +56,19 @@ function CommentItem({ comment }) {
 export default function PostDetailScreen() {
   const navigation = useNavigation();
   const route = useRoute();
-  const { post } = route.params;
+  const post = route.params?.post;
+
+  if (!post) {
+    return (
+      <SafeAreaView style={styles.container} edges={['top', 'bottom']}>
+        <StatusBar style="light" />
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorTitle}>Post no encontrado</Text>
+          <Text style={styles.errorSubtitle}>Vuelve atrás e intenta de nuevo.</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   // Estado local para interacciones en tiempo real
   const [liked, setLiked] = useState(post.liked || false);
@@ -378,6 +390,23 @@ const styles = StyleSheet.create({
   },
   commentLike: {
     paddingTop: SPACING.xs,
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: SPACING.base,
+  },
+  errorTitle: {
+    color: COLORS.text,
+    fontSize: FONTS.size.lg,
+    fontWeight: '700',
+    marginBottom: SPACING.sm,
+  },
+  errorSubtitle: {
+    color: COLORS.textMuted,
+    fontSize: FONTS.size.sm,
+    textAlign: 'center',
   },
   timeAgo: {
     color: COLORS.textMuted,

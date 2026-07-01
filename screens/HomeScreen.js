@@ -54,7 +54,7 @@ export default function HomeScreen() {
 
   const handleUserPress = useCallback(
     (user) => {
-      navigation.navigate('Profile', { user });
+      navigation.navigate('UserProfile', { user });
     },
     [navigation]
   );

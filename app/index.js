@@ -87,9 +87,9 @@ export default function RootNavigator() {
             animation: 'slide_from_right',
           }}
         />
-        {/* Perfil de usuario: también como stack */}
+        {/* Perfil de usuario visitante */}
         <Stack.Screen
-          name="Profile"
+          name="UserProfile"
           component={ProfileScreen}
           options={{
             presentation: 'card',

@@ -9,7 +9,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, FONTS, SPACING } from '../constants/theme';
 
 const MOCK_STORIES = [
